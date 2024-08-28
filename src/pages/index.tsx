@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { reactRouter } from "./react";
 
-import "./styles.css";
+import "./styles.scss";
 import { Outlet, Link } from "react-router-dom";
 import { homeRouter } from "./home";
 import { viteRouter } from "./vite";
