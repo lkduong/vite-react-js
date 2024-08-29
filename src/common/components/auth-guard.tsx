@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "../../store";
 import { Navigate, useLocation } from "react-router-dom";
 
 export function AuthGuard({ children }: { children: JSX.Element }) {

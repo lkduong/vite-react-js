@@ -1,4 +1,4 @@
-import { AuthGuard } from "../../common/auth-guard";
+import { AuthGuard } from "../../common/components/auth-guard";
 
 export const viteRouter = {
   path: "vite",
