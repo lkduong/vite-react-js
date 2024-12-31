@@ -1,0 +1,25 @@
+.app_layout {
+  height: 100%;
+
+  .app_header {
+    position: sticky;
+    top: 0;
+    z-Index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .app_main {
+    padding: 0px 48px;
+
+    .breadcrumb {
+      margin: 16px 0px;
+    }
+
+    .content {
+      padding: 24px;
+      min-height: 380px;
+    }
+  }
+}
