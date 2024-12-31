@@ -11,6 +11,7 @@ import { Breadcrumb, Layout, theme } from "antd";
 import NavigationMenu from "../common/components/navigation-menu";
 import { videoTrainRouter } from "./video-train";
 import { videoCallRouter } from "./video-call";
+import { loginPageRouter } from "./login-screen";
 
 const { Header, Content, Footer } = Layout;
 const breadCrumbs = [{ title: "Home" }, { title: "Video Call" }];
@@ -54,6 +55,6 @@ export const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [homeRouter, reactRouter, videoCallRouter, videoTrainRouter, videoTranslateRouter],
+    children: [homeRouter, reactRouter, videoCallRouter, videoTrainRouter, videoTranslateRouter, loginPageRouter],
   },
 ]);
