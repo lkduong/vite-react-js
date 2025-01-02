@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button, Typography, List, Avatar, Badge, Tooltip } from "antd";
 import { VideoCameraOutlined, MessageOutlined } from "@ant-design/icons";
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { deafCareAPI } from "../../services/deafcare-api";
 
 const { Title, Text } = Typography;
@@ -15,12 +15,14 @@ interface IContactListItem {
 
 export default function UserScreen() {
 
+  const navigate = useNavigate();
+
   const handleCameraClick = (callerName: string) => {
-    redirect(`/callComing-screen?callerName=${callerName}`);
+    navigate(`/callComing-screen?callerName=${callerName}`);
   };
 
   const handleMessageClick = (messagerName: string) => {
-    redirect(`/chat-screen?messagerName=${messagerName}`);
+    navigate(`/chat-screen?messagerName=${messagerName}`);
   };
 
   const [contacts, setContacts] = useState<IContactListItem[]>([]);

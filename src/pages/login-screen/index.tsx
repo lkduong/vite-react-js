@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Button, Input, Form, Typography, Alert, Checkbox } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { deafCareAPI } from "../../services/deafcare-api";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const { Title, Text } = Typography;
 
 export default function LoginPage() {
+  let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -20,7 +21,7 @@ export default function LoginPage() {
 
       if (response.status === 200) {
         localStorage.setItem("user", JSON.stringify(response.data));
-        redirect("/user-screen");
+        navigate("/user-screen");
       } else {
         setError(response.message || "Invalid username or password");
       }
@@ -117,7 +118,7 @@ export default function LoginPage() {
         <div style={{ textAlign: "center" }}>
           <Text type="secondary">Forgot Password? </Text>
           <Button type="link" onClick={() => {
-              return redirect("/ForgotPassword");
+              return navigate("/ForgotPassword");
             }}>
             Reset Here
           </Button>
@@ -126,7 +127,7 @@ export default function LoginPage() {
         <div style={{ textAlign: "center", marginTop: 16 }}>
           <Text>Don’t have an account? </Text>
           <Button type="link" onClick={() => {
-              return redirect("/CreateUserScreen");
+              return navigate("/CreateUserScreen");
             }}>
             Sign Up
           </Button>
